@@ -65,7 +65,8 @@ export default function App() {
         )}
       </main>
 
-      <Footer />
+      <Footer setPage={setPage} />
+
     </div>
   );
 }
