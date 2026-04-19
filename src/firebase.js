@@ -1,9 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+import { getAuth } from "firebase/auth"; // 1. Added this line
 
 const firebaseConfig = {
-  // We use import.meta.env for Vite environment variables
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
@@ -13,5 +13,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
+// 2. Added these exports so other files can use them
 export const db = getFirestore(app);
 export const storage = getStorage(app);
+export const auth = getAuth(app); // 3. This is the line your error was looking for
