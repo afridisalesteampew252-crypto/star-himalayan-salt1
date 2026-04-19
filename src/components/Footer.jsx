@@ -1,25 +1,35 @@
 import React from 'react';
 
-const Footer = () => {
+export default function Footer({ setPage }) {
   return (
-    <footer style={{ background: '#1a1a1a', color: 'white', padding: '4rem 5%', marginTop: '4rem' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
-        <div>
-          <h3 style={{ marginBottom: '1rem', color: '#c9a050' }}>STAR HIMALAYAN</h3>
-          <p style={{ opacity: 0.7, fontSize: '0.9rem' }}>Purest Himalayan salt products for your home and health.</p>
+    <footer className="bg-white border-t border-pink-100 py-12 px-6">
+      <div className="max-w-6xl mx-auto flex flex-col items-center">
+        
+        {/* Your Branding */}
+        <h2 className="text-xl font-black uppercase tracking-tighter mb-4">
+          Star Himalayan <span className="accent-text">Salt</span>
+        </h2>
+        
+        {/* Navigation Links for Footer */}
+        <div className="flex gap-6 mb-8 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+          <button onClick={() => setPage('Home')} className="hover:text-black">Home</button>
+          <button onClick={() => setPage('Catalog')} className="hover:text-black">Catalog</button>
+          <button onClick={() => setPage('Contact')} className="hover:text-black">Contact</button>
         </div>
-        <div>
-          <h4>Contact</h4>
-          <p style={{ opacity: 0.7, fontSize: '0.9rem' }}>Email: info@starhimalayan.com</p>
-          <p style={{ opacity: 0.7, fontSize: '0.9rem' }}>Location: Pakistan</p>
-        </div>
-      </div>
-      <div style={{ textAlign: 'center', marginTop: '3rem', opacity: 0.5, fontSize: '0.8rem', borderTop: '1px solid #333', paddingTop: '1rem' }}>
-        © 2026 Star Himalayan Salt. All Rights Reserved.
+
+        <p className="text-[10px] text-gray-400 uppercase tracking-widest text-center">
+          © {new Date().getFullYear()} Star Himalayan Salt | Premium Export Grade
+        </p>
+
+        {/* --- THE SECRET ADMIN LINK --- */}
+        <button 
+          onClick={() => setPage('Admin')} 
+          className="mt-12 text-[9px] text-gray-200 hover:text-pink-300 uppercase tracking-[0.3em] transition-colors"
+        >
+          Partner Portal
+        </button>
+        
       </div>
     </footer>
   );
-};
-
-export default Footer;
-
+}
