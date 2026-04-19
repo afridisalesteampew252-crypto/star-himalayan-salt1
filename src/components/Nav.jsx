@@ -8,8 +8,16 @@ export default function Nav({ setPage }) {
       </button>
       
       <div className="flex items-center space-x-4 md:space-x-8">
-        <button onClick={() => setPage('Catalog')} className="text-[10px] font-bold uppercase tracking-widest hover:text-[#b76e79]">Catalog</button>
-        <a href="https://wa.me/923318484115" className="accent-bg text-white px-4 py-2 text-[10px] font-bold rounded-full uppercase tracking-widest shadow-md">WhatsApp</a>
+        {/* IMPORTANT: This must say setPage('Catalog') */}
+        <button 
+          onClick={() => setPage('Catalog')} 
+          className="text-[10px] font-bold uppercase tracking-widest hover:text-[#b76e79] cursor-pointer"
+        >
+          Catalog
+        </button>
+        <a href="https://wa.me/923318484115" className="accent-bg text-white px-4 py-2 text-[10px] font-bold rounded-full uppercase tracking-widest shadow-md">
+          WhatsApp
+        </a>
       </div>
     </nav>
   );
