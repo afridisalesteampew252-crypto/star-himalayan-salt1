@@ -1,0 +1,122 @@
+:root {
+  --primary: #c9a050; /* Gold */
+  --secondary: #1a1a1a; /* Dark */
+  --accent: #f8f1e7; /* Cream */
+  --text: #333333;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links span {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.nav-links span:hover {
+  color: var(--primary);
+}
+
+/* Product Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem 5%;
+}
+
+.product-card {
+  background: var(--white);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: #f5f5f5;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.product-info {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Admin Panel */
+.admin-panel {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: var(--accent);
+  border-radius: 8px;
+}
+
+.upload-section {
+  border: 2px dashed var(--primary);
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: white;
+}
+
